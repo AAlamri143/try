@@ -66,41 +66,5 @@
         <div class="card_circle transition"></div>
       </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     </body>
-    
-<script>
-        $(document).ready(function () {
-    
-            $(".gameCard").flip({
-                axis: 'y',
-                trigger: 'hover',
-            });
-    
-            $("#searchBtn").on("click", function () {
-                var input = $('#inputGame').val().trim();
-                var inputName = { name: input };
-                console.log("button clicked");
-    
-                $.post("/input", inputName)
-                    .then(function (data) {
-                        $(".gameList").prepend(
-                            '<div class="card transition">' +
-                            '<h2 class="transition">' + data.Name + '</h2>' +
-                            '<p>Game Platform: ' + data.Platform + '</p>' +
-                            '<p>Year_of_Release: ' + data.Year_of_Release + '</p>' +
-                            '<p>Genre: ' + data.Genre + '</p>' +
-                            'div class="cta-container transition">' +
-                            '<a href="#" class="cta">' + 'Call to action' + '</a>' +
-                            '</div>' +
-                            '<div class="card_circle transition">' +
-                            '</div>' +
-                            '</div>'
-                        );
-                        $('#inputGame').val("");
-                        console.log("input post");
-                    });
-            })
-    
-        })
-    </script>
     </html>
     
